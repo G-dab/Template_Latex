@@ -1,0 +1,21 @@
+\begin{Chinese Note}
+    内积空间是线性空间加上一个内积运算组成的
+\end{Chinese Note}
+
+\subsection{内积 Inner Product}
+\begin{tcolorbox}
+    [colback=Emerald!10,colframe=cyan!40!black,title=\textbf{内积}]
+    设$V$是定义在数域$\mathbb{F}$上的线性空间, 若映射(,): $V\times V \rightarrow \mathbb{F}$满足
+    \begin{itemize}
+        \item (非负性) $\forall x\in V,(x,x)\geq 0,且(x,x)=0当且仅当x=0$
+        \item (对称性) $\forall x,y\in V,(x,y)=(y,x)$
+        \item (线性性) $\forall x,y,z\in V,\forall \alpha,\beta\in\mathbb{F},(\alpha x+\beta y,z)=\alpha(x,z)+\beta(y,z)$
+    \end{itemize}
+    则称映射(,)为$V$上的内积
+\end{tcolorbox}
+定义了内积的线性空间$V$称为内积空间
+
+\subsection{内积空间的性质}
+通过内积可以定义度量 $d(x,y)=\sqrt{(x-y,x-y)}$
+
+进一步定义范数 $\|x\|=\sqrt{(x,x)}$

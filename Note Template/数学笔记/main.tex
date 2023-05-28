@@ -1,0 +1,66 @@
+\documentclass[UTF8]{ctexart}
+% \usepackage{newtxtext}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor} %颜色宏包
+\usepackage{lipsum} %生成一段文字
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage[strict]{changepage} % 提供一个 adjustwidth 环境
+\usepackage{framed} % 实现方框效果
+% 数学宏包
+\usepackage{amsmath}
+\usepackage{amssymb}
+% 插入图片
+\usepackage{graphicx} %插入图片
+\usepackage{float} %设置图片浮动位置
+\usepackage{subfigure} %插入多图时用子图显示
+\graphicspath{{./pic/}} %存放图片的文件夹
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
+% ------------------** 外部设置 **------------------
+% 文本框样式
+\input{textbox}
+% ------------------** 页面布局 **------------------
+\usepackage{geometry} %页面设置
+% a4纸; 水平、竖直均居中
+\geometry{a4paper,centering,scale=0.8}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% style
+%   empty - 页眉和页脚都没有
+\lhead{左页眉}
+\chead{中页眉} 
+\rhead{右页眉}
+\lfoot{左页脚}
+\cfoot{中页脚}
+\rfoot{右页脚}
+% \thepage - 页码
+% \today - 今日日期
+\renewcommand\headrulewidth{2pt} %页眉线宽度
+\renewcommand\footrulewidth{2pt} %页脚线宽度
+% 标题设置
+\usepackage[raggedright]{titlesec}
+% \titleformat{\section}{\Large\bfseries}{Section \thesection}{1em}{} %英文标题
+\titleformat{\section}{\Large\bfseries}{第 \thesection\ 节}{1em}{} %中文标题
+% ------------------** 定理设置 **------------------
+\newtheorem{theorem1}{定理}
+\newtheorem{example}{例}
+% ------------------** 正文 **-------------------
+\title{空间}
+\author{吴晨昊}
+\begin{document}
+\maketitle
+\thispagestyle{fancy} %让首页也有页眉
+
+    \input{0_space}
+
+\section{线性空间 Linear Space}
+    \input{1_linear_space}
+    \clearpage
+
+\section{度量空间 Metric Space}
+    \input{2_metric_space}
+
+\section{赋范线性空间}
+
+\section{内积空间 Inner Product Space}
+    \input{4_inner_product_space}
+
+\end{document}

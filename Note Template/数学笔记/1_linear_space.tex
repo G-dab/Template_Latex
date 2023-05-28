@@ -1,0 +1,38 @@
+\subsection{域}
+\begin{Chinese Note}
+    域就是可加减乘除的集合
+\end{Chinese Note}
+\subsection{线性空间}
+线性空间(Linear Space),又称向量空间(Vector Space),是定义在某数域上,且定义了加法和数乘两种运算的集合
+\begin{tcolorbox}
+    [colback=Emerald!10,colframe=cyan!40!black,title=\textbf{线性空间}]
+
+    定义在数域$\mathbb{F}$上的非空集合 V,对空间中元素定义以下两个二元运算(封闭性)
+    \begin{itemize}
+        \item 加法: $V\times V\rightarrow V$
+        \item 数乘: $\mathbb{F}\times V\rightarrow V$
+    \end{itemize}
+    两种运算满足以下8个条件:
+    \begin{itemize}
+        \item (加法)交换律: $\forall \alpha,\beta\in V,\alpha+\beta=\beta+\alpha$
+        \item (加法)结合律: $\forall \alpha,\beta,\gamma\in V,(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
+        \item (加法)单位元: $\exists 0\in V,\forall \alpha\in V,0+\alpha=\alpha$
+        \item (加法)逆元: $\forall \alpha\in V,\exists -\alpha\in V,s.t.\alpha+(-\alpha)=0$
+        \item (数乘)结合律: $\forall k,l\in\mathbb{F},\forall \alpha\in V,(kl)\alpha=k(l \alpha)$
+        \item (数乘)分配律: $\forall k,l\in\mathbb{F},\forall \alpha\in V,(k+l)\alpha=k \alpha+l \alpha$
+        \item (数乘)分配律: $\forall k\in\mathbb{F},\forall \alpha,\beta\in V,k(\alpha+\beta)=k \alpha+k \beta$
+        \item (数乘)单位元: $\forall \alpha\in V,1\alpha=\alpha$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    [title = \textbf{线性空间的基本性质}, colback=Salmon!20, colframe=Salmon!90!Black]
+    \begin{itemize}
+        \item 零元的唯一性: $\forall x\in V,0x=0$
+        \item 逆元的唯一性: $\forall x\in V,\forall y\in V,x+y=0\Rightarrow y=-x$
+        \item 数乘零元: $\forall \alpha\in\mathbb{F},\alpha 0=0$
+        \item 数乘逆元: $\forall \alpha\in\mathbb{F},\forall x\in V,\alpha x=0\Rightarrow \alpha=0\ or\ x=0$
+    \end{itemize}
+\end{tcolorbox}
+
+

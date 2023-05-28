@@ -1,0 +1,17 @@
+\documentclass{book}
+\usepackage{graphicx,eso-pic,lipsum,etoolbox}
+\providecommand{\chapterhook}{}
+\patchcmd{\chapter}{\thispagestyle}{\chapterhook\thispagestyle}{}{}
+\newcommand{\chapterimage}[2][]{% \parthook[<options>]{<image>}
+  \renewcommand{\chapterhook}{% Update \parthook
+    \AddToShipoutPictureBG*{% Add picture to background of THIS page only
+      \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight,#1]{#2}}}% Insert image
+    \renewcommand{\chapterhook}{}}}% Restore \parthook
+    \graphicspath{{Figures/}}
+\begin{document}
+\input{t.cls}
+\chapterimage{./Figures/Ali.jpg}
+\chapter*{First part}
+\lipsum[1-2]
+
+\end{document}

@@ -1,0 +1,38 @@
+% https://www.latex4technics.com/?note=44HZ
+
+% 用于定义插入封面图片的命令
+% 用法：\coverimage{图片文件名}{图片宽度}
+\newcommand{\coverimage}[2][]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#2]{#1}
+    \end{figure}
+}
+% 用于定义插入图片的命令
+% 用法：\insertimage{图片文件名}{图片宽度}{图片标题}
+\newcommand{\insertimage}[3]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#2]{#1}
+        \caption{#3}
+    \end{figure}
+}
+% 用于定义插入图片的命令
+% 用法：\insertimage{图片文件名}{图片宽度}{图片标题}
+\newcommand{\insertimageleft}[3]{
+    \begin{figure}[H]
+        \flushleft
+        \includegraphics[width=#2]{#1}
+        \caption{#3}
+    \end{figure}
+}
+% 用于定义插入图片的命令
+% 用法：\insertimage{图片文件名}{图片宽度}{图片标题}
+\newcommand{\insertimageright}[3]{
+    \begin{figure}[H]
+        \flushright
+        \includegraphics[width=#2]{#1}
+        \caption{#3}
+    \end{figure}
+}
+

@@ -1,0 +1,40 @@
+\subsection{向量运算}
+\begin{tcolorbox}
+    [colback=Emerald!10,colframe=cyan!40!black,title=\textbf{一般内积}]
+    $\alpha = \sum\limits_{k=1}^{n} x_{k}\alpha_{k}$, $\beta = \sum\limits_{k=1}^{n} y_{k}\alpha_{k}$\\
+    $(\alpha,\beta) = \sum\limits_{k=1}^{n} \sum\limits_{l=1}^{n}x_{k}y_{l}(\alpha_{k}\alpha_{l}) = X^{T}AY$\\
+    A也被称为度量矩阵
+\end{tcolorbox}
+\begin{tcolorbox}
+    [colback=Emerald!10,colframe=cyan!40!black,title=\textbf{叉积}]
+    两个三维向量的叉积为$
+    \alpha \times \beta = 
+    \begin{pmatrix}
+        x_{2}y_{3} - x_{3}y_{2}\\
+        x_{3}y_{1} - x_{1}y_{3}\\
+        x_{1}y_{2} - x_{2}y_{1}
+    \end{pmatrix}$
+\end{tcolorbox}
+\begin{tcolorbox}
+    [colback=Emerald!10,colframe=cyan!40!black,title=\textbf{混合积}]
+    三个三维向量的混合积为$
+    (\alpha \times \beta) \cdot \gamma =
+    \begin{vmatrix}
+        x_{1} & x_{2} & x_{3}\\
+        y_{1} & y_{2} & y_{3}\\
+        z_{1} & z_{2} & z_{3}
+    \end{vmatrix}$
+\end{tcolorbox}
+对于一般的n维空间,叉积没有很好的推广,混合积被行列式替代
+\begin{tcolorbox}
+    [colback=Emerald!10,colframe=cyan!40!black,title=\textbf{酉空间}]
+    设V为复线性空间,V上的内积是一个映射$\phi : V \times V \rightarrow \mathbb{C},\quad
+    \forall \alpha, \beta \in V, \phi(\alpha, \beta) = (\beta, \alpha)$, 满足
+    \begin{itemize}
+        \item Hermite性(替代对称性): $(\alpha, \alpha) = \overline{(\alpha, \beta)}$
+        \item 线性性: $(k\alpha + \beta, \gamma) = k(\alpha, \gamma)+(\beta, \gamma)$
+        \item 正则性: $(\alpha, \alpha) \geq 0$, $(\alpha, \alpha) = 0 \Leftrightarrow \alpha = 0$
+    \end{itemize}
+    定义了内积的复线性空间称为酉空间或复内积空间
+    
+\end{tcolorbox}

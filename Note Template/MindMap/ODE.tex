@@ -1,0 +1,50 @@
+\subsection{初等积分法}
+($\star$)
+\subsection{线性方程}
+\begin{enumerate}
+    \item 存在性与唯一性
+    \begin{enumerate}
+        \item ($\star$)假设$A(t)$是区间$[\alpha, \beta]$上的连续矩阵函数, $f(t)$是区间$[\alpha, \beta]$上的连续列向量函数, 
+        则初值问题$\frac{d}{dt}x=Ax+f(t), x(t_0)=x^0$在区间$[\alpha, \beta]$上存在唯一解
+        \item 齐次方程
+    \end{enumerate}
+\end{enumerate}
+\subsection{常系数线性方程}
+线性微分方程求解的关键就在通解的求得, 而常系数下通解有办法求得
+\begin{enumerate}
+    \item 齐次通解 -- Euler待定指数法\\
+    证明这些解线性无关($\star$)
+    \begin{enumerate}
+        \item 列出特征方程$P(\lambda)=0$,求出特征根
+        \item (1) $P(\lambda)=0$有n个互异实根
+        \item (2) $P(\lambda)=0$有r个互异实根
+        \item (3) $P(\lambda)=0$有r个互异实根和l对共轭互异复根
+    \end{enumerate}
+    \item 非齐次特解 -- 算子法\\
+    算子解法比常数变易公式更简便些
+    \begin{enumerate}
+        \item 解析展开法
+        \item 代换法
+        \item 二项式法
+    \end{enumerate}
+    \item 常系数线性方程组
+    根据矩阵$A$的特征值得到方程的通解
+    \begin{enumerate}
+        \item ($\star$) 若A有n个互异实特征根, 则方程组$\frac{d}{dt}x=Ax$有基本解组$e^{\lambda_{1}t}c_1, e^{\lambda_{2}t}c_2, \cdots, e^{\lambda_{n}t}c_n$,其中$c_i$为$\lambda_i$的特征向量
+        \item 矩阵指数函数$e^{tA}$ (一定收敛)
+        \item ($\star$) 齐次方程组$\frac{d}{dt}x =Ax$有标准解矩阵$e^{tA}$, 
+        非齐次方程$\frac{d}{dt}x=Ax+f(t)$的通解为$x=e^{tA}c + \int_{t_0}^{t} e^{(t-s)A}f(s)ds$
+        \item 标准解矩阵的初等表达: 把$e^{tA}$转换成有限和的形式算出来
+    \end{enumerate}
+    \item 应用:机械振动
+    \begin{enumerate}
+        \item 无阻尼自由振动
+        \item 有阻尼自由振动
+        \item 无阻尼受迫振动
+        \item 有阻尼受迫振动
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{一般理论}
+
+\subsection{定性理论初步}

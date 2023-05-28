@@ -1,0 +1,103 @@
+\documentclass[utf-8]{article}
+\usepackage{newtxtext}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor} %颜色宏包
+\usepackage{ctex} %中文宏包
+\usepackage{geometry} %页面布局
+\usepackage{lipsum} %生成文字
+\usepackage[strict]{changepage} % 提供一个 adjustwidth 环境
+\usepackage{framed} % 实现方框效果
+% ------------------** 页面布局 **------------------
+\geometry{a4paper,centering,scale=0.8}
+% environment derived from framed.sty: see leftbar environment definition
+
+% ------------------*** 文本框设置 **-------------------
+% 颜色定义
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+\definecolor{greenshade}{rgb}{0.90,0.99,0.91} %绿色文本框，竖线颜色设为 Green
+\definecolor{redshade}{rgb}{1.00,0.90,0.90} %红色文本框，竖线颜色设为 LightCoral
+\definecolor{brownshade}{rgb}{0.99,0.97,0.93} %莫兰迪棕色，竖线颜色设为 BurlyWood
+% 注意行末需要把空格注释掉，不然画出来的方框会有空白竖线
+%蓝紫色
+\newenvironment{Purpoe}{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{DarkBlue}\vrule width 2pt}%
+		{\color{formalshade}\vrule width 4pt}%
+		\colorbox{formalshade}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}% disable indenting first paragraph
+	\begin{adjustwidth}{}{7pt}%
+		\vspace{2pt}\vspace{2pt}%
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+%棕色
+\newenvironment{Brown}{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{BurlyWood}\vrule width 2pt}%
+		{\color{brownshade}\vrule width 4pt}%
+		\colorbox{brownshade}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}% disable indenting first paragraph
+	\begin{adjustwidth}{}{7pt}%
+		\vspace{2pt}\vspace{2pt}%
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+% ------------------** 正文 ***-------------------
+\begin{document}
+
+\section{颜色测试}
+    \subsection{Base Color}
+        {\color{black} black}
+        {\color{darkgray} 灰色}
+        {\color{lime} 清柠檬}
+        {\color{red} 红色}
+        {\color{purple} 紫色}
+        {\color{blue} 蓝色}
+    \subsection{dvipsnames}
+        {\color{Apricot} 杏黄色}
+        {\color{Cyan} 青色}
+    \subsection{svgnames}
+        {\color{AliceBlue} AliceBlue}
+        {\color{DarkKhaki} DarkKhaki}
+    \subsection{x11names}
+        {\color{AntiqueWhite1} AntiqueWhite1}
+        {\color{AntiqueWhite2} AntiqueWhite2}
+
+\section{文本框测试}
+\subsection{注释类文本框}
+	\begin{Brown}
+		\textbf{中文注释}
+		\lipsum[4]
+	\end{Brown}
+	\begin{Purpoe}
+		\textbf{English Note}
+		\lipsum[5]
+	\end{Purpoe}
+\subsection{定理类文本框} %这里用tcolorbox宏包
+	% 定义
+	\begin{tcolorbox}
+		[colback=Emerald!10,colframe=cyan!40!black,title=\textbf{Definition}]
+	\end{tcolorbox}
+	% 证明
+	\begin{tcolorbox}[colback=JungleGreen!10!Cerulean!15,colframe=CornflowerBlue!60!Black]
+		\lipsum[3]
+	\end{tcolorbox}
+	% 定理
+	\begin{tcolorbox}[title=\textbf{Linear Dependence Lemma},colback=SeaGreen!10!CornflowerBlue!10,colframe=RoyalPurple!55!Aquamarine!100!]
+		\lipsum[3]
+	\end{tcolorbox}
+	% 性质
+	\begin{tcolorbox}[title = \textbf{Propertiea}, colback=Salmon!20, colframe=Salmon!90!Black]
+		\lipsum[3]
+	\end{tcolorbox}
+	% 超级重要
+	\begin{tcolorbox}[title=\textbf{Warning}, colback=red!5,colframe=red!75!black]
+	\end{tcolorbox}
+\end{document}

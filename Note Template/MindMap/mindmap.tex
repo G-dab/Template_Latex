@@ -1,0 +1,74 @@
+\documentclass[UTF8]{ctexart}
+% \usepackage{newtxtext}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor} %颜色宏包
+\usepackage{lipsum} %生成一段文字
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage[strict]{changepage} % 提供一个 adjustwidth 环境
+\usepackage{framed} % 实现方框效果
+% 数学宏包
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm} %使用\mathbbm{}
+% 插入图片
+% \input{config_image}
+\usepackage{graphicx} %插入图片
+\usepackage{float} %设置图片浮动位置
+\usepackage{subfigure} %插入多图时用子图显示
+\graphicspath{{./pic/},{./pic/decoration/}} %存放图片的文件夹
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
+
+% ------------------** 字体 **------------------
+\usepackage{type1cm} %设置字号
+% ------------------** 外部设置 **------------------
+% 文本框样式
+\input{config_textbox.tex}
+% ------------------** 页面布局 **------------------
+\usepackage{geometry} %页面设置
+% a4纸; 水平、竖直均居中
+\geometry{a4paper,centering,scale=0.9}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{12.7pt} %设置页眉高度,不设就会有 warning
+% style
+%   empty - 页眉和页脚都没有
+\lhead{}
+\chead{Mind Map} 
+\rhead{by Feynman's Little Brother}
+\lfoot{}
+\cfoot{What one fool can understand, another can.}
+\rfoot{}
+% \thepage - 页码
+% \today - 今日日期
+\renewcommand\headrulewidth{2pt} %页眉线宽度
+\renewcommand\footrulewidth{2pt} %页脚线宽度
+% 标题设置
+\usepackage[raggedright]{titlesec}
+% \titleformat{\section}{\Large\bfseries}{Section \thesection}{1em}{} %英文标题
+\titleformat{\section}{\Large\bfseries}{第 \thesection\ 节}{1em}{} %中文标题
+% ------------------** 定理设置 **------------------
+\newtheorem{theorem1}{定理}
+\newtheorem{example}{例}
+
+% ------------------** 封面页设置 **-------------------
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+\fancypagestyle{coverpage}{
+    \fancyhf{} % clear all header and footer fields
+    \renewcommand{\headrulewidth}{0pt} % remove the header rule
+    \fancyhead[C]{\includegraphics[width=1\paperwidth,height=0.4\paperwidth,trim=500 50 50 50,clip]{cover}} % add the cover page image to the header
+}
+% ------------------** 正文 **-------------------
+\title{\fontsize{40pt}{80pt} $\mathbbm{Advance Algebra}$}
+\author{\textcolor{ForestGreen}{Feynman's Little Brother}}
+
+\begin{document}
+% \thispagestyle{fancy} %让首页也有页眉
+
+% ---------- 正文部分 ----------
+\section{常微分方程}
+    \input{ODE.tex}
+    \newpage
+
+
+\end{document}
