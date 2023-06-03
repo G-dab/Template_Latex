@@ -38,13 +38,53 @@
     \end{enumerate}
     \item 应用:机械振动
     \begin{enumerate}
-        \item 无阻尼自由振动
-        \item 有阻尼自由振动
-        \item 无阻尼受迫振动
-        \item 有阻尼受迫振动
+        \item 无阻尼自由振动 $\ddot{x}+\omega^2 x=0$
+        \item 有阻尼自由振动 $\ddot{x}+2\delta \dot{x}+\omega^2 x=0$
+        \item 无阻尼强迫振动 $\ddot{x}+\omega^2 x = \frac{F_0}{m}\cos pt$
+        \item 有阻尼强迫振动 $\ddot{x}+2\delta \dot{x}+\omega^2 x = \frac{F_0}{m}\cos pt$
     \end{enumerate}
 \end{enumerate}
 
 \subsection{一般理论}
-
+\begin{enumerate}
+    \item Picard存在唯一性定理
+    \begin{itemize}
+        \item $\dot{x}=f(t,x), x(t_0)=x_0$,其中$f(t,x)$连续且满足Lipschiz条件,
+        则初值问题在区间$|t-t_0|\leq h$存在唯一解
+        \item 构造Picard序列 -- 求近似解 $\varphi_{n}(t) = x_0 + \int_{t_0}^{t}f(\tau , \varphi_{n-1}(\tau))d\tau$
+        \item Picard序列误差估计 $|\varphi_{n}(t) - \varphi(t)| \leq \frac{ML^{n}}{(n+1)!}h^{n+1}$
+    \end{itemize}
+    \item Peano存在性定理
+    \begin{itemize}
+        \item \textbf{Ascoli-Arzela定理} $[\alpha, \beta]$上的一致有界且等度连续的函数列${f_k(t)}$有一致收敛的子序列
+        \item $\dot{x}=f(t,x), x(t_0)=x_0$,其中$f(t,x)$连续,
+        则初值问题在区间$|t-t_0|\leq h$有至少一个解 (没有Lipschiz条件,解仍存在但是不唯一)
+        \item 构造Eule折线, 证明其是$\epsilon$-逼近解
+    \end{itemize}
+    \item 解的延拓
+    \begin{itemize}
+        \item 饱和解的存在区间为开区间
+        \item \textbf{解的延拓定理} G为$\mathbb{R}^2$上的开区间, $f(t,x)$在G内连续,
+        则对$\dot{x}=f(t,x)$的任一饱和解$\varphi(t)$必能到达G的边界
+        \item 找一个比函数连续区域更小的区域,得到矛盾
+    \end{itemize}
+    \item 微分不等式与比较定理
+    \begin{itemize}
+        \item ($\star$) \textbf{Gronwall不等式} x(t), f(t)在$[t_0, t_1]$上连续，$f(t)\geq 0$, 若$x(t)\leq g + \int_{t_0}^{t}f(s)x(s)ds$, 则$x(t)\leq g\exp(\int_{t_0}^{t}f(s)ds)$
+        \item \textbf{推广Gronwall不等式} x(t), f(t), g(t)在$[t_0, t_1]$上连续，$f(t)\geq 0$, 若$x(t)\leq g(t) + \int_{t_0}^{t}f(s)x(s)ds$, 则$x(t)\leq g(t) + \int_{t_0}^{t}f(\tau)g(\tau)e^{\int_{\tau}^{t}f(s)ds}d\tau$
+        \item ($\star$) \textbf{第一比较定理}, 证明时注意描述
+        \item ($\star$) 最大解和最小解的存在性和唯一性, 可延拓性, 证明时构造递减序列
+        \item ($\star$) \textbf{第二比较定理}, 证明时构造递减序列
+    \end{itemize}
+    \item 解对初值和参数的依赖
+    \item 微分方程数值解
+\end{enumerate}
 \subsection{定性理论初步}
+\begin{enumerate}
+    \item 动力系统概念
+    \item Lyapunov稳定性
+    \item Lyapunov直接法
+    \item 平面平衡点分析
+    \item 周期轨道与Poincare映射
+    \item 平面Hamilton系统
+\end{enumerate}
